@@ -103,7 +103,7 @@ Mohon informasi lebih lanjut. Terima kasih!`;
               </div>
 
               <a
-                href="https://wa.me/81232258802"
+                href="https://wa.me/6281232258802"
                 target="_blank"
                 rel="noreferrer"
                 className="wa-btn-link"
