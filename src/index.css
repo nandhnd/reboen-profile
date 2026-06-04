@@ -1,0 +1,45 @@
+/* 1. Import Geist Font dari Google Fonts (Mendukung semua ketebalan / font-weight) */
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
+/* 2. Import Tailwind v4 */
+@import "tailwindcss";
+
+/* 3. Konfigurasi Token Warna & Font Figma di v4 */
+@theme {
+  /* Pengaturan Warna */
+  --color-cyber-dark: #111225;
+  --color-cyber-deep: #0b0c1f;
+  --color-cyber-cyan: #00f2ff;
+  --color-cyber-light-cyan: #e1fdff;
+  --color-cyber-purple: #ebb2ff;
+  --color-cyber-neon-blue: #00dbe7;
+  --color-cyber-sky: #4cd6ff;
+  --color-cyber-text-muted: #b9cacb;
+  --color-cyber-lavender: #e1e0fb;
+
+  /* Timpa font default Tailwind dengan Geist */
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+
+  /* Buat custom utility class font-geist (opsional, karena default sudah Geist) */
+  --font-geist: "Geist", sans-serif;
+}
+
+/* 4. Global CSS */
+@layer base {
+  body {
+    background-color: var(--color-cyber-dark);
+    color: var(--color-cyber-text-muted);
+    /* Terapkan Geist ke seluruh body */
+    font-family: var(--font-sans);
+  }
+}
+
+/* 5. Plugin Requirement: Leaflet Map (Dark Mode) */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background-color: var(--color-cyber-deep);
+  /* Trik CSS untuk membuat map standar jadi Dark Mode */
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}

@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cyber-dark: #0b0c1f;
+  --color-cyber-cyan: #00dbe7;
+  --color-cyber-lavender: #e1fdff;
+  --color-cyber-text-muted: #b9cacb;
+}
+
+@layer base {
+  body {
+    background-color: #0b0c1f;
+    color: #e1fdff;
+    font-family: "Geist", "Inter", sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* ==========================================================================
+   LAYOUT WRAPPER & NAVIGATION
+   ========================================================================== */
+.page-wrapper {
+  @apply min-h-screen bg-[#0B0C1F] text-white flex flex-col relative overflow-x-hidden;
+}
+
+.navbar-fixed {
+  @apply fixed top-0 left-0 w-full h-[80px] bg-[#0B0C1F]/80 backdrop-blur-md border-b border-[#00DBE7]/10 px-6 lg:px-12 flex items-center justify-between z-50;
+}
+
+.nav-link {
+  @apply text-[#B9CACB] text-[14px] font-semibold tracking-[1.4px] uppercase hover:text-[#00DBE7] transition-colors;
+}
+
+.nav-link-active {
+  @apply text-[#00DBE7] text-[14px] font-semibold tracking-[1.4px] uppercase border-b-2 border-[#00DBE7] pb-1;
+}
+
+.main-content {
+  @apply pt-[120px] pb-24 flex-1 flex flex-col items-center px-6 lg:px-12;
+}
+
+/* ==========================================================================
+   HERO HEADINGS
+   ========================================================================== */
+.hero-section {
+  @apply w-full max-w-[1280px] flex flex-col items-center gap-4 text-center mb-16;
+}
+
+.hero-title {
+  @apply text-[40px] lg:text-[64px] font-bold text-[#E1FDFF] tracking-[3px] lg:tracking-[6.4px] uppercase leading-tight;
+}
+
+.hero-subtitle {
+  @apply max-w-[672px] text-[16px] lg:text-[18px] text-[#B9CACB] leading-[28px] font-normal;
+}
+
+/* ==========================================================================
+   BENTO GRID LAYOUT
+   ========================================================================== */
+.bento-grid-container {
+  @apply w-full max-w-[1232px] grid grid-cols-1 lg:grid-cols-12 gap-6 items-start;
+}
+
+.info-column {
+  @apply lg:col-span-5 flex flex-col gap-6 w-full;
+}
+
+.form-column {
+  @apply lg:col-span-7 w-full;
+}
+
+/* ==========================================================================
+   CARDS (WHATSAPP & OFFICE ADDRESS)
+   ========================================================================== */
+.card-whatsapp {
+  @apply w-full bg-white/[0.02] border border-[#25D366]/20 backdrop-blur-[8px] rounded-[12px] p-6 relative overflow-hidden flex flex-col gap-6;
+}
+
+.wa-header-row {
+  @apply flex items-center gap-4;
+}
+
+.wa-title {
+  @apply text-[20px] font-semibold text-[#E1FDFF];
+}
+
+.wa-btn-link {
+  @apply w-full h-[54px] bg-[#25D366] text-[#0B0C1F] font-bold rounded-lg text-[14px] tracking-[1.4px] uppercase flex items-center justify-center hover:scale-[1.02] transition-transform z-10 shadow-[0_0_20px_rgba(37,211,102,0.3)];
+}
+
+.wa-overlay-blur {
+  @apply absolute -right-10 -bottom-10 w-32 h-32 bg-[#25D366]/10 rounded-full blur-2xl pointer-events-none;
+}
+
+.card-office {
+  @apply w-full bg-white/[0.02] border border-[#00DBE7]/15 backdrop-blur-[8px] rounded-[12px] p-6 flex flex-col gap-4;
+}
+
+.office-header {
+  @apply flex items-center gap-2;
+}
+
+.office-dot {
+  @apply w-2 h-2 bg-[#00DBE7] rounded-full animate-pulse shadow-[0_0_8px_#00DBE7];
+}
+
+.office-label {
+  @apply text-[12px] font-bold tracking-[1.2px] text-[#00DBE7] uppercase;
+}
+
+.office-address {
+  @apply text-[16px] text-[#B9CACB] leading-[24px];
+}
+
+.office-map-placeholder {
+  @apply w-full h-[200px] rounded-[8px] overflow-hidden relative border border-white/5;
+}
+
+.office-map-bg {
+  @apply w-full h-full bg-cover bg-center filter grayscale contrast-125 opacity-40;
+}
+
+.office-map-overlay {
+  @apply absolute inset-0 flex items-center justify-center bg-[#0B0C1F]/20;
+}
+
+.office-marker {
+  @apply text-2xl animate-bounce;
+}
+
+/* ==========================================================================
+   CONTACT FORM STYLES
+   ========================================================================== */
+.card-form {
+  @apply w-full bg-white/[0.02] border border-[#00DBE7]/15 backdrop-blur-[8px] rounded-[12px] p-6 lg:p-8;
+}
+
+.form-title {
+  @apply text-[24px] font-bold text-[#E1FDFF] mb-6 uppercase tracking-[1px];
+}
+
+.form-body {
+  @apply flex flex-col gap-5;
+}
+
+.form-row-2col {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-5;
+}
+
+.form-group-half,
+.form-group-full {
+  @apply flex flex-col gap-2;
+}
+
+.form-label {
+  @apply text-[14px] font-semibold tracking-[0.5px] text-[#B9CACB];
+}
+
+.form-input,
+.form-textarea {
+  @apply w-full bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#00DBE7]/50 transition-colors text-[15px];
+}
+
+.form-textarea {
+  @apply h-[120px] resize-none;
+}
+
+.form-btn {
+  @apply w-full h-[54px] bg-[#00DBE7] text-[#002022] font-semibold rounded-lg text-[14px] tracking-[1.4px] shadow-[0_0_15px_rgba(0,219,231,0.3)] flex items-center justify-center hover:scale-[1.01] transition-transform uppercase;
+}
+
+/* ==========================================================================
+   FOOTER COMPONENT STYLES
+   ========================================================================== */
+.footer-base {
+  @apply w-full bg-[#060713] border-t border-white/5 pt-16 pb-8 px-6 lg:px-12 mt-auto;
+}
+
+.footer-grid-container {
+  @apply max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12;
+}
+
+.footer-logo-row {
+  @apply flex items-center gap-3 mb-4;
+}
+
+.footer-logo-text {
+  @apply font-bold text-2xl tracking-[2.88px] text-[#00DBE7];
+}
+
+.footer-desc {
+  @apply text-[14px] text-[#B9CACB] leading-[22px];
+}
+
+.footer-social-row {
+  @apply flex items-center gap-3 mt-4;
+}
+
+.footer-social-circle {
+  @apply w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#00DBE7]/20 border border-white/10 hover:border-[#00DBE7]/30 transition-all;
+}
+
+.footer-heading {
+  @apply text-[16px] font-bold tracking-[1px] text-[#E1FDFF] uppercase mb-4;
+}
+
+.footer-list {
+  @apply flex flex-col gap-2.5 list-none p-0 m-0;
+}
+
+.footer-link-text {
+  @apply text-[14px] text-[#B9CACB] hover:text-[#00DBE7] transition-colors decoration-0;
+}
+
+.footer-link-text-active {
+  @apply text-[#00DBE7] text-[14px] font-semibold;
+}
+
+/* ==========================================================================
+   BOTTOM BASE & SERVER STATUS
+   ========================================================================== */
+.bottom-bar {
+  @apply max-w-[1280px] mx-auto border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4;
+}
+
+.copyright-text {
+  @apply text-[13px] text-[#B9CACB]/60;
+}
+
+.status-container {
+  @apply flex items-center gap-2 bg-white/[0.02] border border-white/5 px-3 py-1.5 rounded-full;
+}
+
+.status-dot-box {
+  @apply relative w-2 h-2 flex items-center justify-center;
+}
+
+.status-dot-box::before {
+  content: "";
+  @apply w-2 h-2 bg-[#00FF66] rounded-full animate-ping absolute inline-flex h-full w-full opacity-75;
+}
+
+.status-dot-box::after {
+  content: "";
+  @apply w-2 h-2 bg-[#00FF66] rounded-full z-10;
+}
+
+.status-text {
+  @apply text-[11px] font-bold tracking-[1px] text-[#00FF66];
+}
