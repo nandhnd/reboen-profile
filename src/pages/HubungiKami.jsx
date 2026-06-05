@@ -125,7 +125,7 @@ Mohon informasi lebih lanjut. Terima kasih!`;
 
               <div className="office-text-box">
                 <p className="office-address">
-                  Wagir, Kabupaten Malang, Jawa Timur
+                  Balesari, Kecamatan Ngajum, Kabupaten Malang, Jawa Timur
                 </p>
               </div>
 
